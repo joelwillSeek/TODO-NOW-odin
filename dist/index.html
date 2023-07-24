@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO NOW</title>
-  <script defer src="bundle111de00d05cc0afe7915.js"></script></head>
+  <script defer src="bundle29f08e4bc4eb07c9ca4c.js"></script></head>
   <body>
     <div class="sidenav">
       <h1>TODO NOW</h1>
@@ -16,18 +16,49 @@
         <button>Project 3</button>
       </ul>
     </div>
+    <!-- 
+    <dialog>
+      <div class="contaner">
+        <h1>Create A Project</h1>
+        <input type="text" placeholder="Project Name" />
+        <input type="text" placeholder="Description" />
+        <input type="text" placeholder="Deadline" />
+        <button class="createProject">Add</button>
+        <button class="cancel">Cancel</button>
+      </div>
+    </dialog> -->
 
     <dialog>
-      <h1>Create A Project</h1>
-      <input type="text" placeholder="Project Name" />
-      <input type="text" placeholder="Description" />
-      <input type="text" placeholder="Deadline" />
-      <button class="add">Add</button>
-      <button class="cancel">Cancel</button>
+      <div class="container">
+        <h1>Create A Project</h1>
+        <input type="text" placeholder="Project Name" />
+        <button class="createProject">Add Project</button>
+        <button class="cancel">Cancel</button>
+      </div>
     </dialog>
 
     <div class="todocontent">
-      <h1>Project Name</h1>
+      <div class="top">
+        <h1>Project Name</h1>
+        <button class="createTodo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-plus"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+
       <div class="todolistofselectedproject">
         <div class="todo">
           <h1>Title</h1>

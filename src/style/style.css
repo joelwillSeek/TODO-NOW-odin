@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* general */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-dark-color: #000;
+  --dominate-color: #fffeff;
+  --seconday-color: #006992;
+  --accent-color: #eca400;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 10fr 0.5fr;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+button {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: 0;
+  text-transform: capitalize;
+  background-color: var(--seconday-color);
+  color: var(--dominate-color);
+  margin: 1rem;
+  transition: all ease-in-out 300ms;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+hr {
+  width: 100%;
+}
+
+footer p {
+  align-self: center;
+}
+
+/* dialog */
+
+dialog {
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 40px 0;
+  animation: dialoganimation ease-in-out 300ms;
+}
+
+dialog .container {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+@keyframes dialoganimation {
+  0% {
+    filter: opacity(0%);
+  }
+
+  100% {
+    filter: opacity(100%);
+  }
+}
+
+dialog::backdrop {
+  background-color: #00000050;
+}
+
+dialog input {
+  padding: 1rem 5rem;
+  border: 4px solid var(--seconday-color);
+  margin-bottom: 1rem;
+  border-radius: 40px;
+}
+
+dialog input::placeholder {
+  color: var(--seconday-color);
+  text-align: center;
+  font-size: larger;
+}
+
+/* footer */
+
+footer {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  background-color: var(--seconday-color);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 100%;
+  color: var(--dominate-color);
+  width: 100%;
+}
+
+/* sidenav */
+
+.sidenav {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #aaa;
+  justify-items: center;
+  align-items: center;
+}
+
+.projectlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* todo content */
+
+.todocontent {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  overflow: hidden;
+}
+
+.todocontent .top {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem 3rem;
+}
+
+.todocontent .top button.createTodo svg {
+  width: 35px;
+  height: 35px;
+}
+
+.todocontent .top button.createTodo {
+  border-radius: 50px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.todocontent .todolistofselectedproject {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.todocontent .todolistofselectedproject .todo {
+  min-width: 100%;
+  max-height: 60px;
+  display: flex;
+  flex-direction: row;
+  color: var(--dominate-color);
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+  background-color: var(--seconday-color);
+}
+
+.todocontent .todolistofselectedproject .todo p {
+  font-size: large;
+  margin: 0 20rem;
+}
+
+.todocontent .todolistofselectedproject .todo button {
+  background-color: var(--accent-color);
+  color: var(--dominate-color);
+  min-height: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  border: 4px solid var(--accent-color);
+  border-left: 0;
+  float: right;
+}
+
+.todocontent .todolistofselectedproject .todo button svg {
+  margin-left: 1rem;
+  transition: stroke ease-in-out 300ms;
+}
+
+.todocontent .todolistofselectedproject .todo button:hover svg {
+  stroke: var(--accent-color);
+}
+
+.todocontent .todolistofselectedproject .todo button:hover {
+  color: var(--accent-color);
+  background-color: var(--dominate-color);
+}
+
+.todocontent .todolistofselectedproject .todo h1 {
+  float: left;
+  margin-left: 3rem;
+  font-size: 2.3rem;
+  transition: color ease-in-out 300ms;
+}
+
+.todocontent .todolistofselectedproject .todo h1:hover {
+  color: var(--accent-color);
+}
+
+/* styles used by javascript */
+.notFiledInput {
+  border: 3px solid red !important;
+}
+
+/* Responsiveness */
+
+@media (width<=720px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 0.2fr;
+    max-width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .todocontent {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .todocontent .todolistofselectedproject .todo p {
+    font-size: large;
+    margin: 0;
+  }
+
+  .sidenav {
+    width: 100%;
+  }
+
+  footer {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+
+@media (width<=1286px) {
+  button {
+    font-size: 14px;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .todocontent .todolistofselectedproject .todo p {
+    margin: 0.5rem;
+  }
+
+  .todocontent .todolistofselectedproject .todo h1 {
+    font-size: 1.5rem;
+  }
+
+  .todocontent .todolistofselectedproject .todo {
+    max-height: 50px;
+  }
+}
