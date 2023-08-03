@@ -1,0 +1,162 @@
+:root {
+  --text-dark-color: #000;
+  --dominate-color: #fffeff;
+  --seconday-color: #006992;
+  --accent-color: #eca400;
+}
+
+.todocontent {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.todocontent .top {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem 3rem;
+}
+
+.todocontent .top button.createTodo svg {
+  width: 35px;
+  height: 35px;
+}
+
+.todocontent .top button {
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.todocontent .top button.createTodo {
+  border-radius: 50px 0 0 50px;
+}
+
+.todocontent .top button.delete_todo {
+  border-radius: 0 50px 50px 0;
+  transition: background-color ease-in-out 300ms;
+  padding: 1.2rem;
+}
+
+.todocontent .top button.delete_todo svg {
+  stroke-width: 0.22rem;
+}
+
+.todocontent .top button.delete_todo:hover {
+  background-color: red;
+}
+
+.todocontent .top .button_add_and_delete {
+  display: flex;
+  flex-direction: row;
+}
+
+.todocontent .todolistofselectedproject {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.todocontent .todolistofselectedproject .main_todo .todo {
+  min-width: 100%;
+  max-height: 60px;
+  display: flex;
+  flex-direction: row;
+  color: var(--dominate-color);
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+}
+
+.todocontent .todolistofselectedproject .main_todo p {
+  font-size: large;
+  margin: 0 20rem;
+}
+
+.todocontent .todolistofselectedproject .main_todo .todo button {
+  background-color: var(--accent-color);
+  color: var(--dominate-color);
+  min-height: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  border: 4px solid var(--accent-color);
+  float: right;
+}
+
+.todocontent .todolistofselectedproject .main_todo .detailed_text_container {
+  display: none;
+}
+
+.todocontent .todolistofselectedproject .main_todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: var(--seconday-color);
+  margin: 1rem 0;
+  color: var(--dominate-color);
+  text-align: center;
+}
+
+.todocontent .todolistofselectedproject .main_todo .todo button svg {
+  margin-left: 1rem;
+  transition: stroke ease-in-out 300ms;
+}
+
+.todocontent .todolistofselectedproject .main_todo .todo button:hover svg {
+  stroke: var(--accent-color);
+}
+
+.todocontent .todolistofselectedproject .main_todo .todo button:hover {
+  color: var(--accent-color);
+  background-color: var(--dominate-color);
+}
+
+.todocontent .todolistofselectedproject .main_todo .todo h1 {
+  float: left;
+  margin-left: 3rem;
+  font-size: 2.3rem;
+  transition: color ease-in-out 300ms;
+}
+
+.todocontent .todolistofselectedproject .main_todo .todo h1:hover {
+  color: var(--accent-color);
+}
+
+@media (width<=720px) {
+  .todocontent {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .todocontent .todolistofselectedproject .main_todo .todo p {
+    font-size: large;
+    margin: 0;
+  }
+}
+
+@media (width<=1286px) {
+  .todocontent .todolistofselectedproject .main_todo .todo p {
+    margin: 0.5rem;
+  }
+
+  .todocontent .todolistofselectedproject .main_todo .todo h1 {
+    font-size: 1.5rem;
+  }
+
+  .todocontent .todolistofselectedproject .main_todo .todo {
+    max-height: 50px;
+  }
+}

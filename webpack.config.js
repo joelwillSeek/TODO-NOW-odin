@@ -4,7 +4,7 @@ const htmlWebpack = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/scripts/index.js"),
+    bundle: path.resolve(__dirname, "src/scripts/dom_manipulator.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -17,7 +17,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, "dist"),
     },
-    port: 3000,
+    port: 3001,
     historyApiFallback: true,
     hot: true,
     compress: true,
